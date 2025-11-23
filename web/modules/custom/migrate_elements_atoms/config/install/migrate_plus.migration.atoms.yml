@@ -1,0 +1,23 @@
+id: atoms
+label: 'Atoms'
+migration_group: custom_migration
+source:
+  plugin: yaml
+  path: public://migrate/atoms
+  pattern: atom_*.yml
+  item_selector: ~
+  identifiers:
+    nid: nid/0/value
+process:
+  nid: nid/0/value
+  uuid: uuid/0/value
+  title: title/0/value
+  type: type/0/target_id
+  status: status/0/value
+  uid: uid/0/target_id
+  created: created/0/value
+  changed: changed/0/value
+  field_element: field_element/0/target_id
+destination:
+  plugin: entity:node
+  default_bundle: atom

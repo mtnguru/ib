@@ -45,7 +45,8 @@ class FakeObjects extends PluginBase implements CKEditorPluginInterface, CKEdito
    * Implements CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'az_wysiwyg') . '/assets/js/ckeditor/fakeobjects/plugin.js';
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'az_wysiwyg'); 
+    return $module_path . '/assets/js/ckeditor/fakeobjects/plugin.js';
   }
 
   /**

@@ -1,5 +1,8 @@
-name: AZ Book
+name: 'AZ Book'
 type: module
-description: Modify book menus and content
-core_version_requirement: 9.x
-package: AZ
+description: 'Extends the Book module to display a collapsible hierarchical book menu with unpublished toggle.'
+core_version_requirement: ^10
+package: 'AZ'
+dependencies:
+  - drupal:book
+

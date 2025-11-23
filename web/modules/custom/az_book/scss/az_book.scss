@@ -1,0 +1,186 @@
+$images-path: '/modules/custom/az_book/images/';
+//$images-path: '/modules/custom/az_book/images/';
+//$images-path: '../../images/';
+
+$base-duration: 1000ms;
+$base-timing: ease;
+
+@mixin transition-3d($property: all, $duration: $base-duration, $timing: $base-timing, $transform: null, $transition: true, $origin: null) {
+
+  @if ($transition == true) {
+    transition: $property $duration $timing;
+  }
+
+  $translate-3d: translate3d(0, 0, 0);
+
+  @if ($transform) {
+    transform: $transform $translate-3d;
+  }
+  @else {
+    transform: $translate-3d;
+  }
+
+  @if ($origin) {
+    transform-origin: $origin;
+  }
+} // @mixin transition-3d
+
+#az-book {
+  &.hide-unpublished {
+    #az-toggle-unpublished {
+      color: #333;
+    }
+    li.is-unpublished {
+      display: none;
+    }
+  }
+
+  &.expanded {
+    #az-toggle-expand {
+      color: #333;
+    }
+    li.has-children {
+      > .az-book-list-wrapper {
+        @include transition-3d($duration: 750ms);
+        overflow-y: hidden;
+        max-height: 1000px !important;
+      }
+    }
+  }
+}
+
+h1.page-title {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 43.75rem) {
+
+  .sidebar-grid .region--sidebar {
+    grid-column: 3 / 13;
+  }
+}
+
+
+@media (min-width: 62.5rem) {
+  .sidebar-grid .region--sidebar {
+    grid-column: 11 / 15;
+  }
+}
+
+#az-book {
+
+  a {
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    padding: .3rem .3rem .1rem;
+    margin: .2rem 0;
+    color: #00a;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    line-height: 1;
+    position: relative;
+    padding-left: 12px;
+
+    &.is-current > a      { background-color: #ced; }
+//  &.is-unpublished > a { color: #888; }
+
+    &.is-placeholder > a { color: #888; }
+    &.is-draft > a       { color: #2a2; }
+    &.is-review > a      { color: #a00; }
+    &.is-published > a   { color: #37f; }
+    &.is-archived > a    { color: #333; }
+    &.is-rejected > a    { color: #a50; }
+    &.is-hold > a        { color: #65f; }
+  }
+
+  li.has-children {
+    position: relative;
+
+    &::before {
+      transition: all 300ms ease-in-out;
+      transform: translateY(-50%);
+      content: '';
+      background-image: url('../images/right-arrow.png');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: .8em;
+      left: 0px;
+      width: 1rem; // Adjust size as needed
+      height: 1rem;
+      display: block; // Ensures it's treated as a block for sizing
+    }
+
+    > .az-book-list-wrapper {
+      @include transition-3d($duration: 750ms);
+      overflow-y: hidden;
+      max-height: 0px;
+    }
+
+    &.is-expanded {
+      &::before {
+        top: .3em;
+        transform: rotate(90deg);
+      }
+
+      > .az-book-list-wrapper {
+        max-height: 1000px;
+      }
+    }
+  }
+
+  #az-book-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    font-size: 90%;
+    > span {
+      padding: 0 .25rem;
+    }
+  }
+
+  #az-book-edit {
+    a {
+      color: #777;
+    }
+  }
+
+  #az-toggle-expand,
+  #az-toggle-unpublished {
+    color: #777;
+    font-style: italic;
+    margin-top: .5rem;
+  }
+
+  #az-book-title {
+    text-align: center;
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin: 0 0 .5rem;
+    }
+  }
+
+  .az-book-item {
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .az-book-children {
+    margin-left: 1.5em;
+  }
+}

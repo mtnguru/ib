@@ -2,7 +2,7 @@ name: Neato Starter
 type: theme
 description: Custom sub-theme based on the the Neato base theme.
 base theme: neato
-core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
 libraries:
   - STARTER/global-styling
   - STARTER/global-scripts

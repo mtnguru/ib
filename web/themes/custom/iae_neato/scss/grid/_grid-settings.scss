@@ -4,7 +4,7 @@
 // $gutter: 20px;
 
 $grid-columns: 36;
-$max-width: 1920px;
+$max-width: 3600px;
 
 $visual-grid: false;
 $visual-grid-index: front;
@@ -16,7 +16,7 @@ $min-width-tablet: 580;
 $min-width-tablet-toolbar: 610;
 $min-width-desktop: 960;
 $min-width-widescreen: 1280;
-$min-width-superwide: 1920;
+$min-width-superwide: 3600;
 
 $bp580: rem($min-width-tablet);
 $bp610: rem($min-width-tablet-toolbar);

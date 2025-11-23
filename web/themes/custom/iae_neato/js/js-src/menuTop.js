@@ -78,14 +78,21 @@
 
   Drupal.behaviors.menuTop = {
     attach: function (context, settings) {
-      $(context).find('#site-header').once('menuTopAttached').each(function () {
-        setTimeout(event => {
-          if (!Drupal.menuTop) {
-            Drupal.menuTop = Drupal.menuTopC();
-          }
-          Drupal.menuTop.init(this);
-        }, 1000);
-      })
+
+      $(context).find('#site-header').each(function () {
+        // Check if we've already processed this element
+        if (!$(this).data('menuTopAttached')) {
+          // Mark it as processed
+          $(this).data('menuTopAttached', true);
+
+          setTimeout(event => {
+            if (!Drupal.menuTop) {
+              Drupal.menuTop = Drupal.menuTopC();
+            }
+            Drupal.menuTop.init(this);
+          }, 1000);
+        }
+      });
       /*
       $(context).find('#dyslexia-button').once('dyslexia-attached').each(function () {
         var dyslexia = localStorage.getItem('dyslexia_font');

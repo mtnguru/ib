@@ -11,6 +11,6 @@ test_dependencies:
 
 # Information added by Drupal.org packaging script on 2016-08-02
 version: '9.x-1.2'
-core_version_requirement: '9.x'
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 project: 'Az_media_entity_image'
 datestamp: 1470170950

@@ -1,0 +1,140 @@
+#az-book.hide-unpublished #az-toggle-unpublished {
+  color: #333;
+}
+#az-book.hide-unpublished li.is-unpublished {
+  display: none;
+}
+#az-book.expanded #az-toggle-expand {
+  color: #333;
+}
+#az-book.expanded li.has-children > .az-book-list-wrapper {
+  transition: all 750ms ease;
+  transform: translate3d(0, 0, 0);
+  overflow-y: hidden;
+  max-height: 1000px !important;
+}
+
+h1.page-title {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 43.75rem) {
+  .sidebar-grid .region--sidebar {
+    grid-column: 3/13;
+  }
+}
+@media (min-width: 62.5rem) {
+  .sidebar-grid .region--sidebar {
+    grid-column: 11/15;
+  }
+}
+#az-book a {
+  border-radius: 2px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.3rem 0.3rem 0.1rem;
+  margin: 0.2rem 0;
+  color: #00a;
+}
+#az-book a:hover {
+  text-decoration: underline;
+}
+#az-book ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#az-book li {
+  line-height: 1;
+  position: relative;
+  padding-left: 12px;
+}
+#az-book li.is-current > a {
+  background-color: #ced;
+}
+#az-book li.is-placeholder > a {
+  color: #888;
+}
+#az-book li.is-draft > a {
+  color: #2a2;
+}
+#az-book li.is-review > a {
+  color: #a00;
+}
+#az-book li.is-published > a {
+  color: #37f;
+}
+#az-book li.is-archived > a {
+  color: #333;
+}
+#az-book li.is-rejected > a {
+  color: #a50;
+}
+#az-book li.is-hold > a {
+  color: #65f;
+}
+#az-book li.has-children {
+  position: relative;
+}
+#az-book li.has-children::before {
+  transition: all 300ms ease-in-out;
+  transform: translateY(-50%);
+  content: "";
+  background-image: url("../images/right-arrow.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0.8em;
+  left: 0px;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+#az-book li.has-children > .az-book-list-wrapper {
+  transition: all 750ms ease;
+  transform: translate3d(0, 0, 0);
+  overflow-y: hidden;
+  max-height: 0px;
+}
+#az-book li.has-children.is-expanded::before {
+  top: 0.3em;
+  transform: rotate(90deg);
+}
+#az-book li.has-children.is-expanded > .az-book-list-wrapper {
+  max-height: 1000px;
+}
+#az-book #az-book-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  font-size: 90%;
+}
+#az-book #az-book-buttons > span {
+  padding: 0 0.25rem;
+}
+#az-book #az-book-edit a {
+  color: #777;
+}
+#az-book #az-toggle-expand,
+#az-book #az-toggle-unpublished {
+  color: #777;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+#az-book #az-book-title {
+  text-align: center;
+}
+#az-book #az-book-title h2 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+}
+#az-book .az-book-item {
+  margin: 0.3rem 0;
+  display: flex;
+  align-items: center;
+}
+#az-book .az-book-children {
+  margin-left: 1.5em;
+}
+/*# sourceMappingURL=maps/az_book.css.map */

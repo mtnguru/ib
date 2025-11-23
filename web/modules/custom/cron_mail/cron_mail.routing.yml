@@ -1,7 +1,0 @@
-cron_mail.description:
-  path: '/cron-mail'
-  defaults:
-    _form: '\Drupal\cron_mail\Form\CronMailForm'
-    _title: 'Cron Mail'
-  requirements:
-    _permission: 'access content'

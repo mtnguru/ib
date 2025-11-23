@@ -1,0 +1,16 @@
+az-book-block:
+  version: 1.x
+  css:
+    theme:
+      css/az_book.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css: {}
+  js:
+    js/az_book.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - core/once
+  images:
+    images/right-arrow.png: {}
+

@@ -9,7 +9,8 @@
  * Implements hook_install().
  */
 function az_media_entity_image_install() {
-  $source = drupal_get_path('module', 'az_media_entity_image') . '/images/icons';
+  $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
+  $source = $module_path . '/images/icons';
   $destination = \Drupal::config('media_entity.settings')->get('icon_base');
   media_entity_copy_icons($source, $destination);
 }

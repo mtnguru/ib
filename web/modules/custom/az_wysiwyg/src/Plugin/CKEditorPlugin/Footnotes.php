@@ -42,17 +42,19 @@ class Footnotes extends PluginBase implements CKEditorPluginInterface, CKEditorP
    * Implements CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'az_wysiwyg') . '/assets/js/ckeditor/plugin.js';
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
+    return $module_path . '/assets/js/ckeditor/plugin.js';
   }
 
   /**
    * Implements CKEditorPluginButtonsInterface::getButtons().
    */
   public function getButtons() {
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
     return array(
       'az_wysiwyg' => array(
         'label' => t('Footnotes'),
-        'image' => drupal_get_path('module', 'az_wysiwyg') . '/assets/js/ckeditor/icons/az_wysiwyg.png',
+        'image' => $module_path . '/assets/js/ckeditor/icons/az_wysiwyg.png',
       ),
     );
   }

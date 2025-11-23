@@ -1,5 +1,5 @@
 name: AZ Navigation
 type: module
 description: Create the page header with branding, nav menu and user menu
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: AZ

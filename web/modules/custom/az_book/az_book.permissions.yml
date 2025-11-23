@@ -1,4 +1,0 @@
-show unpublished book pages:
-  title: 'Show Unpublished Book Pages'
-  description: 'When displaying book menu, show unpublished pages'
-  restrict access: TRUE;

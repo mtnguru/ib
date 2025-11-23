@@ -1,0 +1,13 @@
+/* @file
+ * This file is a custom file that loads all files. Each non-base layer
+ * can be disabled.
+ *
+ * Do not name this file "STARTER.scss". This file should be named
+ * sa_neato.scss. If you used the drush command to generate this subtheme,
+ * it should be named for you.
+ *
+ * This application file (ntest.scss) is where all the partials are
+ * imported.
+ */
+
+@use "variables/variables" as vars;

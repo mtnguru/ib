@@ -16,7 +16,7 @@ base theme: false
 description: 'A complete copy of the core theme - claro'
 alt text: 'Screenshot of Claro, Drupal administration theme.'
 package: Core
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10 | ^11
 version: VERSION
 libraries:
   - core/drupal.message

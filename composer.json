@@ -16,25 +16,40 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^3.1",
-        "drupal/auto_save_form": "^5.1",
-        "drupal/autosave_form": "^1.3",
+        "drupal/admin_toolbar": "^3.5",
+        "drupal/adminimal_theme": "^1.7",
+        "drupal/autosave_form": "^1.10",
+        "drupal/book": "^2.0",
         "drupal/book_tree_menu": "^2.0",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-project-message": "^9.4",
-        "drupal/core-recommended": "^9.4",
+        "drupal/classy": "^1.0",
+        "drupal/core": "^10.5",
+        "drupal/core-composer-scaffold": "^11.2",
+        "drupal/core-project-message": "^11.2",
+        "drupal/core-recommended": "^10.5",
         "drupal/cshs": "^4.0",
-        "drupal/devel": "^4.1",
+        "drupal/devel": "^5",
         "drupal/devel_kint_extras": "^1.0",
-        "drupal/entity_browser": "^2.7",
-        "drupal/entity_embed": "^1.2",
+        "drupal/embed": "^1.9",
+        "drupal/entity_browser": "^2.10",
+        "drupal/entity_embed": "^1.7",
         "drupal/entity_reference_revisions": "^1.9",
-        "drupal/module_filter": "^3.2",
-        "drupal/neato": "^1.9",
+        "drupal/font_awesome": "^1.8",
+        "drupal/geofield": "^1.64",
+        "drupal/gin": "^4.1",
+        "drupal/group": "^3.3",
+        "drupal/mediteran": "^1.32",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_source_yaml": "^1.5",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/module_filter": "^5.0",
+        "drupal/neato": "^2.0",
         "drupal/paragraphs": "^1.14",
-        "drupal/pathauto": "^1.10",
+        "drupal/pathauto": "^1.13",
+        "drupal/rdf": "^2.0",
+        "drupal/token": "^1.15",
+        "drupal/upgrade_status": "^4.3",
         "drupal/views_tree": "^2.0@RC",
-        "drush/drush": "^11.6",
+        "drush/drush": "^12.4.3",
         "php-mqtt/client": "^1.8"
     },
     "conflict": {
@@ -45,9 +60,9 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "drupal/core-project-message": true
         },
         "sort-packages": true
     },
@@ -107,5 +122,9 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "kint-php/kint": "^6.0",
+        "kint-php/kint-twig": "^6.0"
     }
 }

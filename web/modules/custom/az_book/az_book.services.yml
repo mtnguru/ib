@@ -1,5 +1,0 @@
-services:
-  az_book.manager:
-    class: Drupal\az_book\AzBookManager
-    arguments: ['@entity_type.manager', '@string_translation', '@config.factory', '@book.outline_storage', '@renderer']
-

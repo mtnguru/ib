@@ -681,9 +681,11 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  *
  * For example:
  * @code
- * $settings['trusted_host_patterns'] = [
- *   '^www\.example\.com$',
- * ];
+$settings['trusted_host_patterns'] = [
+   '^www\.example\.com$',
+   '^itsallelectric.org$',
+   '^iae$',
+];
  * @endcode
  * will allow the site to only run from www.example.com.
  *
@@ -772,7 +774,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'iae',
+  'database' => 'ib',
   'username' => 'root',
   'password' => 'taichi',
   'prefix' => '',
@@ -783,3 +785,9 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_-K4yoNt7OcOeOox5CTSr-hn25bQCTc0hry2nnTmZPPAvdXkW9FHRBkWR87BvzEa7z0KGEyVmmg/sync';
+
+
+
+#Added by James
+$config['system.logging']['error_level'] = 'verbose';
+$settings['state_cache'] = TRUE;

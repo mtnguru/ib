@@ -3,6 +3,7 @@ global-styling:
   css:
     base:
       css/iae_neato.css: {}
+      css/imager_custom.css: {}
       fonts/fontawesome/css/all.css: {}
 
 global-scripts:

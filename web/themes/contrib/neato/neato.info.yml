@@ -2,8 +2,7 @@ name: Neato!
 type: theme
 base theme: classy
 description: Base Drupal theme based on the Neat grid system from Thoughtbot.
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 regions:
   header: Header
   featured: Featured
@@ -14,7 +13,7 @@ regions:
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
 
-# Information added by Drupal.org packaging script on 2020-05-25
-version: '8.x-1.9'
+# Information added by Drupal.org packaging script on 2023-11-06
+version: '8.x-2.0'
 project: 'neato'
-datestamp: 1590398499
+datestamp: 1699299153

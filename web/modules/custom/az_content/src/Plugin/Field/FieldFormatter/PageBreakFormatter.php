@@ -41,7 +41,9 @@ class PageBreakFormatter extends FormatterBase {
    * {@inheritdoc}
    */
 /*public function settingsForm(array $form, FormStateInterface $form_state) {
-    $fileList = AtomizerFiles::createFileList(drupal_get_path('module', 'atomizer') . '/config/atomizers', '/\.yml/');
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
+    $fileList = AtomizerFiles::createFileList($module_path . '/config/atomizers', '/\.yml/');
     $atomizer = $this->getSetting('atomizer');
     $atomizer_class = $this->getSetting('atomizer_class');
 
@@ -67,7 +69,8 @@ class PageBreakFormatter extends FormatterBase {
    */
 /*public function settingsSummary() {
     $summary = array();
-    $fileList = AtomizerFiles::createFileList(drupal_get_path('module', 'atomizer') . '/config/atomizers', '/\.yml/');
+    $module_path = DRUPAL_ROOT . \Drupal::service('extension.path.resolver')->getPath('module', 'atomizer'); 
+    $fileList = AtomizerFiles::createFileList($module_path . '/config/atomizers', '/\.yml/');
 
     $atomizer = $this->getSetting('atomizer');
     $atomizer = ($atomizer) ? $atomizer : defaultSettings()['atomizer'];

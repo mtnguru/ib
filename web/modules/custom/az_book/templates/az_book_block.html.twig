@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Default theme implementation for rendering book outlines within a block.
+ *
+ * This template is used only when the block is configured to "show block on all
+ * pages", which presents multiple independent books on all pages.
+ *
+ * Available variables:
+ * - book_menus: Book outlines.
+ *   - id: The parent book ID.
+ *   - title: The parent book title.
+ *   - menu: The top-level book links.
+ *
+ * @see template_preprocess_book_all_books_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{# {{ attach_library('az_book/az-book-block') }} #}
+
+<nav role="navigation" aria-label="{% trans %}Book outline for {{ book_title }}{% endtrans %}">
+  {% macro buildMenu(page) %}
+    {% import _self as self %}
+    <li class="{{ page.classes|join(' ') }}">{{ page.markup }}
+
+      {% if page.below|length %}
+        <div class="az-book-list-wrapper">
+          <ul class="az-book-list">
+            {% for child in page.below %}
+              {{ self.buildMenu(child) }}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </li>
+  {% endmacro %}
+
+  {% from _self import buildMenu %}
+
+  <div id="az-book" class="hide-unpublished">
+
+    {% if can_admin %}
+      <div id="az-book-buttons">
+        <span title="Show unpublished pages" id="az-toggle-unpublished" class="fa fa-bolt"> </span>
+        <span title="Expand full menu" id="az-toggle-expand" class="fa fa-arrows-alt"> </span>
+        <span title="Edit book page titles and order" id="az-book-edit">
+          <a href="{{ '/admin/structure/book/' ~ book_id }}" class="fa fa-book" target="_blank"></a>
+        </span>
+      </div>
+    {% endif %}
+
+    {% if book_title %}
+      <div id="az-book-title">
+        <h2>
+          <a class="{{ book_title_classes }}" href="{{ book_url }}">{{ book_title|raw }}</a>
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if book_tree %}
+      <div id="az-book-contents">
+        <ul class="az-book-list">
+          {% set first = book_tree|first %}
+          {% for page in first.below %}
+            {{ buildMenu(page) }}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if misc_links %}
+      <div id="misc-links">
+      {{ misc_links }}
+      </div>
+    {% endif %}
+  </div>
+
+</nav>

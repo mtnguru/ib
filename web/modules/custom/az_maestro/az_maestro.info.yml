@@ -1,5 +1,5 @@
 name: AZ Maestro
 type: module
 description: JavaScript program that is the main dashboard
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: AZ

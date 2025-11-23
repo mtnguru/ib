@@ -1,5 +1,5 @@
 name: 'AZ Ethereal Matters Custom'
 type: module
 description: 'Ethereal Matters site specific code'
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: 'Custom'

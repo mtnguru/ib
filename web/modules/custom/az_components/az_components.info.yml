@@ -1,7 +1,7 @@
 name: AZ More Slider 
 type: module
 description: Wrap a formatted text field in divs that create a more slider.
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: AZ
 dependicies:
   - field

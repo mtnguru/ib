@@ -1,7 +1,7 @@
 name: AZ Mail
 type: module
 description: Handles mailing of new content and group emails.
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: AZ
 dependencies:
   - drupal:node

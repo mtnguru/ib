@@ -1,5 +1,5 @@
 name: AZ Taxonomy
 type: module
 description: Modify taxonomy terms.
-core_version_requirement: 9.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 package: AZ

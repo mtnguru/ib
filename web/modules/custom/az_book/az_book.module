@@ -1,30 +1,24 @@
 <?php
 
-
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
-
 
 /**
  * Implements hook_theme().
  */
 function az_book_theme() {
   return [
-    'az_book_navigation' => [
+    'az_book_block' => [
+      'template' => 'az_book_block',
+      'path' => \Drupal::service('extension.list.module')->getPath('az_book') . '/templates',
       'variables' => [
         'book_title' => '',
         'book_url' => '',
-        'book_pages' => [],
+        'book_tree' => [],
         'book_id' => '',
         'book_title_classes' => false,
-        'group_id' => '',
-        'group_name' => '',
-        'group_url' => '',
-        'group_logo_url' => false,
-        'group_links' => false,
-        'hide_unpublished' => false,
-        'misc_links' => false,
+        'can_admin' => false,
         'status' => false,
       ],
     ],
@@ -40,6 +34,7 @@ function az_book_theme() {
  * Attempt to find why this happens, no luck. It may be related to the
  * workflow module. A clean lightning install does not have the problem.
  */
+
 function az_book_node_insert(EntityInterface $node) {
   // Set a flag that the node is inserted. check for this flag in az_book_node_update().
     $node->azInserted = true;
@@ -55,3 +50,4 @@ function az_book_node_update(EntityInterface $node) {
                                 // a book link. It was created in book_node_insert.
   }
 }
+

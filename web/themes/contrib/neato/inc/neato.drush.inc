@@ -52,7 +52,7 @@ function drush_neato_generate($name) {
     mkdir(drush_get_context('DRUSH_DRUPAL_ROOT') . '/themes/custom', 0755, TRUE);
   }
 
-  $neato_path    = drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . drupal_get_path('theme', 'neato');
+  $neato_path    = drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . \Drupal::service('extension.list.theme')->getPath('neato');
   $subtheme_path = drush_get_context('DRUSH_DRUPAL_ROOT') . '/themes/custom/' . $machine_name;
 
   // Make a fresh copy of the subtheme.

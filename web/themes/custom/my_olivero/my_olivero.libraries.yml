@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      css/theme.css: {}  # Your custom CSS.
+  js:
+    js/theme.js: {}  # Optional custom JS.
+  dependencies:
+    - olivero/global-styling  # Inherit Olivero's base styles.
+    - core/jquery  # If using jQuery.
