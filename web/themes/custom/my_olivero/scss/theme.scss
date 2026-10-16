@@ -10,4 +10,10 @@
  * imported.
  */
 
-@use "variables/variables" as vars;
+
+@use "base/variables" as vars;
+@use "base/base" as base;
+@use "base/layout" as layout;
+@use "base/page" as page;
+@use "base/atomizer" as atom;
+

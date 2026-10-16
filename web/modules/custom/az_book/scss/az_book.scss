@@ -50,20 +50,27 @@ $base-timing: ease;
 }
 
 h1.page-title {
+  margin-top: 2rem;
   font-size: 2.5rem;
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 62.5rem) {
+}
 
+@media (min-width: 43.75rem) {
   .sidebar-grid .region--sidebar {
     grid-column: 3 / 13;
   }
 }
 
-
 @media (min-width: 62.5rem) {
+  .sidebar-grid > .site-main {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-column: 1 / 11;
+  }
   .sidebar-grid .region--sidebar {
-    grid-column: 11 / 15;
+    grid-column: 11 / 16;
   }
 }
 

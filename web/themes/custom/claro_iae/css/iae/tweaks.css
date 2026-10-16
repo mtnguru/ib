@@ -1,0 +1,17 @@
+.tabledrag-cell .tabledrag-handle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.tabledrag-cell .form-type--textfield {
+  display: inline-block;
+  margin: .10rem 0;
+}
+
+.tabledrag-cell .form-type--textfield input {
+  padding: calc(0.05rem) calc(.60rem);
+  min-height: 1rem;
+}
+
+.draggable-table .dropbutton-action a {
+  font-size: 1rem !important;
+}

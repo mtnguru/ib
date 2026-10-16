@@ -1,3 +1,77 @@
+.container {
+  max-width: none;
+}
+
+body.page-node-type-atomizer .layout-main,
+body.page-node-type-atomizer .grid-full {
+  display: block;
+}
+body.page-node-type-atomizer .main-content {
+  width: auto;
+}
+body.page-node-type-atomizer .page-wrapper {
+  max-width: none;
+}
+
+body html {
+  line-height: 1.15;
+}
+
+.main-content__container {
+  padding-block-start: var(--sp1);
+}
+
+.text-content {
+  line-height: 1.75;
+}
+
+.field--name-field-sub-title {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.field--name-field-teaser {
+  background: #ffeeff;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.region > *:where(:not([data-big-pipe-placeholder-id])) {
+  margin-block-end: var(--sp);
+}
+
+/*
+@include media ('>=tablet') {
+  .region > *:where(:not([data-big-pipe-placeholder-id])) {
+    margin-block-end: var(--sp1);
+  }
+}
+*/
+/*
+@media (min-width: 62.5rem) {
+  .region > *:where(:not([data-big-pipe-placeholder-id])) {
+    margin-block-end: var(--sp1);
+  }
+}
+*/
+.social-bar {
+  display: none;
+}
+
+/* For truly full-width (no max-width constraint) on atomizer nodes */
+.node--type-atomizer.node--view-mode-full .layout__region--content,
+.node--type-atomizer.node--view-mode-full .container {
+  max-width: 100% !important;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+/* Or to remove grid constraints specifically */
+.node--type-atomizer.node--view-mode-full .layout-container {
+  display: block; /* Override grid if needed */
+}
+
 /* @file
  * This file is a custom file that loads all files. Each non-base layer
  * can be disabled.
@@ -9,7 +83,4 @@
  * This application file (ntest.scss) is where all the partials are
  * imported.
  */
-html {
-  font-size: 16px;
-}
 /*# sourceMappingURL=maps/theme.css.map */

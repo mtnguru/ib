@@ -1,0 +1,17 @@
+
+.container {
+  max-width: none;
+}
+
+body.page-node-type-atomizer {
+  .layout-main,
+  .grid-full {
+    display: block;   // Disable grid
+  }
+  .main-content {
+    width: auto;
+  }
+  .page-wrapper {
+    max-width: none;
+  }
+}

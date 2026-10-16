@@ -1,0 +1,7 @@
+az_book.load_node_ajax:
+  path: '/az-book/load/{node}'
+  defaults:
+    _controller: '\Drupal\az_book\Controller\AzBookAjaxController::load'
+  requirements:
+    _permission: 'access content'
+    node: '\d+'

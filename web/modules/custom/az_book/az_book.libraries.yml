@@ -6,6 +6,7 @@ az-book-block:
       https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css: {}
   js:
     js/az_book.js: {}
+    js/az_book_ajax.js: {}
   dependencies:
     - core/drupal
     - core/jquery

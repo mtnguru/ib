@@ -1,0 +1,45 @@
+body html {
+  line-height: 1.15;
+}
+
+.main-content__container {
+  padding-block-start: var(--sp1);
+}
+
+.text-content {
+  line-height: 1.75;
+}
+
+.field--name-field-sub-title {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.field--name-field-teaser {
+  background: #ffeeff;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.region > *:where(:not([data-big-pipe-placeholder-id])) {
+  margin-block-end: var(--sp);
+}
+
+/*
+@include media ('>=tablet') {
+  .region > *:where(:not([data-big-pipe-placeholder-id])) {
+    margin-block-end: var(--sp1);
+  }
+}
+*/
+/*
+@media (min-width: 62.5rem) {
+  .region > *:where(:not([data-big-pipe-placeholder-id])) {
+    margin-block-end: var(--sp1);
+  }
+}
+*/
+.social-bar {
+  display: none;
+}
+/*# sourceMappingURL=../maps/base/page.css.map */

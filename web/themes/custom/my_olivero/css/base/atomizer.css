@@ -1,0 +1,14 @@
+/* For truly full-width (no max-width constraint) on atomizer nodes */
+.node--type-atomizer.node--view-mode-full .layout__region--content,
+.node--type-atomizer.node--view-mode-full .container {
+  max-width: 100% !important;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+/* Or to remove grid constraints specifically */
+.node--type-atomizer.node--view-mode-full .layout-container {
+  display: block; /* Override grid if needed */
+}
+/*# sourceMappingURL=../maps/base/atomizer.css.map */

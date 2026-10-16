@@ -131,6 +131,8 @@ class AzBookBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
       $link = Link::fromTextAndUrl($node->getTitle(), $url)->toRenderable();
       $link['#attributes']['class'][] = 'az-book-link';
+      $link['#attributes']['class'][] = 'az-book-ajax-link';
+      $link['#attributes']['data-nid'] = $node->id();
       $link['#options']['attributes']['title'] = $field_sub_title;
       $item['markup'] = \Drupal::service('renderer')->renderPlain($link);
 

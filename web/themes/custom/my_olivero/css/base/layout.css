@@ -1,0 +1,15 @@
+.container {
+  max-width: none;
+}
+
+body.page-node-type-atomizer .layout-main,
+body.page-node-type-atomizer .grid-full {
+  display: block;
+}
+body.page-node-type-atomizer .main-content {
+  width: auto;
+}
+body.page-node-type-atomizer .page-wrapper {
+  max-width: none;
+}
+/*# sourceMappingURL=../maps/base/layout.css.map */

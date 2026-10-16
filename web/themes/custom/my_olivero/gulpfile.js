@@ -9,6 +9,7 @@ var fs = require("fs");
 var runSequence = require('run-sequence');
 var config = require("./example.config");
 var sassGlob = require('gulp-sass-glob');
+var path = require('path');
 
 /**
  * If config.js exists, load that config for overriding certain values below.
@@ -29,30 +30,24 @@ loadConfig();
  */
 gulp.task('sass', function () {
   return gulp.src('./scss/**/*.scss')
-//  .pipe(notify({
-//    title: "Starting SASS Compilation",
-//    message: "Starting compilation",
-//    onLast: true
-//  }))
     .pipe(sassGlob())
     .pipe(sourcemaps.init())
     .pipe(sass({
       noCache: true,
       outputStyle: "compressed",
-      lineNumbers: false,
-      loadPath: './css/*',
-      sourceMap: true
-    })).on('error', function(error) {
-      gutil.log(error);
-      this.emit('end');
+      sourceMap: true,
+      includePaths: [
+        path.resolve(__dirname, 'node_modules/include-media/dist'),
+        path.resolve(__dirname, 'node_modules'),
+        './scss'
+      ],
     })
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('[Sass Error]') + ' ' + err.messageFormatted);
+      this.emit('end');                 // prevents gulp from crashing
+    }))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./css'))
-//  .pipe(notify({
-//    title: "SASS Compiled",
-//    message: "All SASS files have been recompiled to CSS.",
-//    onLast: true
-//  }));
+    .pipe(gulp.dest('./css'));
 });
 
 /**
@@ -109,4 +104,12 @@ gulp.task('watch', function() {
 //gulp.watch(['scss/**/*.scss'], gulp.parallel(['sass', 'drush:cc']));
   gulp.watch(['scss/**/*.scss'], gulp.parallel('sass'));
 });
+
+/**
+ * Watch task that compiles Sass once before starting to watch
+ */
+gulp.task('watch', gulp.series('sass', function() {
+  gulp.watch('scss/**/*.scss', gulp.parallel('sass'));
+  // gulp.watch('scss/**/*.scss', gulp.parallel('sass', 'drush:cc')); // uncomment if needed
+}));
 

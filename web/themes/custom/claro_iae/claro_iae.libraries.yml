@@ -63,6 +63,7 @@ global-styling:
       css/layout/breadcrumb.css: {}
       css/layout/local-actions.css: {}
       css/layout/layout.css: {}
+      css/iae/tweaks.css: {}
   dependencies:
     - system/admin
     - core/jquery
